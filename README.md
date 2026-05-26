@@ -55,6 +55,13 @@ Once the USB is staged via YKWriter:
 
 ---
 
+## 🤝 Credits & Acknowledgments
+
+* **Exploit Discovery & Release:** A huge thanks to **Nightmare Eclipse** ([GitLab Profile](https://gitlab.com/nightmare-eclipse)) for identifying and releasing the CVE-2026-45585 vulnerability.
+* **Core Tooling:** The execution workflow and recovery bypass methods utilized by this project are based on the [YellowKey repository](https://gitlab.com/nightmare-eclipse/YellowKey).
+
+--- 
+
 📄 License
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
