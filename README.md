@@ -57,7 +57,7 @@ Once the USB is staged via YKWriter:
 
 ## 🤝 Credits & Acknowledgments
 
-* **Exploit Discovery & Release:** A huge thanks to **Nightmare Eclipse** ([GitLab Profile](https://gitlab.com/nightmare-eclipse)) for identifying and releasing the CVE-2026-45585 vulnerability.
+* **Exploit Discovery & Release:** A huge thanks to **Nightmare Eclipse** ([Blog](https://deadeclipse666.blogspot.com/)) for identifying and releasing the CVE-2026-45585 vulnerability. (Note: Their GitHub and GitLab profiles have since been closed).
 * **Core Tooling:** The execution workflow and recovery bypass methods utilized by this project are based on the [YellowKey repository](https://gitlab.com/nightmare-eclipse/YellowKey).
 
 --- 
