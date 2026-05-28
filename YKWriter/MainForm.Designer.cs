@@ -34,7 +34,6 @@
             cbDrives = new ComboBox();
             gbLog = new GroupBox();
             rtbLog = new RichTextBox();
-            label1 = new Label();
             label2 = new Label();
             pbStatus = new ProgressBar();
             btnRefresh = new Button();
@@ -43,10 +42,10 @@
             // 
             // btnRun
             // 
-            btnRun.Location = new Point(223, 5);
+            btnRun.Location = new Point(245, 5);
             btnRun.Margin = new Padding(2);
             btnRun.Name = "btnRun";
-            btnRun.Size = new Size(207, 22);
+            btnRun.Size = new Size(185, 22);
             btnRun.TabIndex = 0;
             btnRun.Text = "Run";
             btnRun.UseVisualStyleBackColor = true;
@@ -69,7 +68,7 @@
             cbDrives.Location = new Point(156, 7);
             cbDrives.Margin = new Padding(2);
             cbDrives.Name = "cbDrives";
-            cbDrives.Size = new Size(38, 20);
+            cbDrives.Size = new Size(60, 20);
             cbDrives.TabIndex = 2;
             cbDrives.SelectedIndexChanged += cbDrives_SelectedIndexChanged;
             // 
@@ -97,16 +96,6 @@
             rtbLog.TabIndex = 0;
             rtbLog.Text = "";
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(11, 194);
-            label1.Margin = new Padding(2, 0, 2, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(28, 12);
-            label1.TabIndex = 4;
-            label1.Text = "Info";
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -128,7 +117,7 @@
             // btnRefresh
             // 
             btnRefresh.Image = (Image)resources.GetObject("btnRefresh.Image");
-            btnRefresh.Location = new Point(198, 6);
+            btnRefresh.Location = new Point(220, 6);
             btnRefresh.Margin = new Padding(2);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(21, 20);
@@ -144,7 +133,6 @@
             Controls.Add(btnRefresh);
             Controls.Add(pbStatus);
             Controls.Add(label2);
-            Controls.Add(label1);
             Controls.Add(gbLog);
             Controls.Add(cbDrives);
             Controls.Add(lbSelect);
@@ -170,7 +158,6 @@
         private ComboBox cbDrives;
         private GroupBox gbLog;
         private RichTextBox rtbLog;
-        private Label label1;
         private Label label2;
         private ProgressBar pbStatus;
         private Button button1;
