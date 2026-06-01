@@ -145,7 +145,7 @@
             MaximizeBox = false;
             Name = "MainForm";
             Text = "YKWriter (CVE-2026-45585)";
-            Load += Form1_Load;
+            Load += MainForm_Load;
             gbLog.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();

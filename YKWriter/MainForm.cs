@@ -19,37 +19,34 @@ namespace YKWriter
         private void PopulateDriveComboBox()
         {
             cbDrives.Items.Clear();
+
             try
             {
                 DriveInfo[] allDrives = DriveInfo.GetDrives();
+
                 foreach (DriveInfo drive in allDrives)
                 {
-                    if (drive.IsReady && drive.DriveType == DriveType.Removable)
-                    {
-                        string volumeLabel = string.IsNullOrEmpty(drive.VolumeLabel) ? "USB Drive" : drive.VolumeLabel;
-                        string displayText = $"{drive.Name}";
+                    // Skip drives that aren't ready or aren't removable
+                    if (!drive.IsReady || drive.DriveType != DriveType.Removable)
+                        continue;
+                    //string volumeLabel = string.IsNullOrEmpty(drive.VolumeLabel) ? "USB Drive" : drive.VolumeLabel;
 
-                        cbDrives.Items.Add(displayText);
-                    }
+                    cbDrives.Items.Add(drive.Name);
                 }
 
                 if (cbDrives.Items.Count > 0)
                 {
                     cbDrives.SelectedIndex = 0;
-                    UpdateLog(rtbLog, $"[+] Current selected drive: {cbDrives.SelectedItem}");
-
+                    
                 }
             }
             catch (Exception ex)
             {
-                {
-                    MessageBox.Show($"Error retrieving drives: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
+                MessageBox.Show($"Error retrieving drives: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
             PopulateDriveComboBox();
         }
@@ -63,11 +60,11 @@ namespace YKWriter
 
         private void cbDrives_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbDrives.SelectedItem != null)
+            if (cbDrives.SelectedItem is string selectedText)
             {
-                // Safely grab just the first character (e.g., "E") 
-                // This completely bypasses any extra text or brackets in the item
-                driveLetter = cbDrives.SelectedItem.ToString().Substring(0, 1).ToUpper();
+                UpdateLog(rtbLog, $"[+] Current selected drive: {cbDrives.SelectedItem}");
+                // Extracts the first character safely (e.g., "E" from "E:\")
+                driveLetter = selectedText[0].ToString().ToUpper();
             }
         }
 
